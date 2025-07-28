@@ -1,82 +1,92 @@
-# 🤖 Chatbot API experto en Python
-Este proyecto es una API REST basada en FastAPI que funciona como un chatbot experto en Python. Utiliza el modelo Mistral a través de OpenRouter (compatible con la API de OpenAI) para generar respuestas conversacionales.
+🤖 Chatbot API experto en Git y Control de Versiones
 
-## 🚀 Requisitos
-- Python 3.8 o superior
-- Tener una API Key de OpenRouter
-- Conexión a internet
+Este proyecto es una API REST construida con FastAPI que actúa como un chatbot especializado en Git y control de versiones. Utiliza el modelo Mistral a través de OpenRouter (compatible con la API de OpenAI) para generar respuestas claras y detalladas sobre temas relacionados con Git, ramas, merge, rebase, conflictos, flujos de trabajo y más.
+🚀 Requisitos
 
-## 🛠 Instalación
-1. Clona este repositorio o descarga los archivos
-2. Crea un entorno virtual:
-```bash
+    Python 3.8 o superior
+
+    Clave API de OpenRouter
+
+    Conexión a internet
+
+🛠 Instalación
+
+    Clona este repositorio o descarga los archivos
+
+    Crea un entorno virtual:
+
 python -m venv venv  
-```
-3. Activa el entorno virtual:
-   - Windows: venv\Scripts\activate
-   - macOS/Linux: source venv/bin/activate
-4. Instala las dependencias:
-```bash
+
+    Activa el entorno virtual:
+
+        Windows: venv\Scripts\activate
+
+        macOS/Linux: source venv/bin/activate
+
+    Instala las dependencias:
+
 pip install -r requirements.txt  
-```
-5. Crea un archivo .env en la raíz del proyecto con:
-```env
+
+    Crea un archivo .env en la raíz del proyecto con el siguiente contenido:
+
 API_KEY=tu_api_key_de_openrouter  
 BASE_URL=https://openrouter.ai/api/v1  
-```
 
-## ▶ Ejecución
-Inicia el servidor con:
-```bash
+▶ Ejecución
+
+Inicia el servidor local con:
+
 uvicorn main:app --reload  
-```
-- API disponible en: http://127.0.0.1:8000
-- Documentación Swagger UI: http://127.0.0.1:8000/docs
 
-## 📬 Ejemplo de uso
-Petición POST a /chat:
-```json
-{"pregunta": "¿Qué es una lista en Python?"}  
-```
+    API disponible en: http://127.0.0.1:8000
+
+    Documentación interactiva: http://127.0.0.1:8000/docs
+
+📬 Ejemplo de uso
+
+Petición tipo POST a /chat:
+
+{"pregunta": "¿Cuál es la diferencia entre merge y rebase en Git?"}  
+
 Respuesta esperada:
-```json
-{"respuesta": "Una lista en Python es una colección ordenada y mutable de elementos..."}  
-```
 
-## 🐳 Despliegue con Docker
-Construye la imagen:
-```bash
-docker build -t python-chatbot .  
-```
-Ejecuta el contenedor:
-```bash
-docker run -d -p 8000:8000 --name chatbot --env-file .env python-chatbot  
-```
+{"respuesta": "El merge une dos ramas conservando su historial, mientras que el rebase reescribe el historial para crear una secuencia lineal..."}  
 
-## ☁️ Despliegue en Render
-1. Crea un nuevo "Web Service" en Render
-2. Conecta tu repositorio GitHub
-3. Configura las variables de entorno
-4. Usa este comando de inicio:
-```bash
+🐳 Despliegue con Docker
+
+Construcción de imagen:
+
+docker build -t git-chatbot .  
+
+Ejecución del contenedor:
+
+docker run -d -p 8000:8000 --name chatbot --env-file .env git-chatbot  
+
+☁️ Despliegue en Render
+
+    Crea un nuevo Web Service en Render
+
+    Conecta tu repositorio desde GitHub
+
+    Añade las variables de entorno desde .env
+
+    Usa este comando de inicio:
+
 uvicorn main:app --host 0.0.0.0 --port 8000  
-```
 
-## 📁 Estructura del proyecto
-```
-chatbot-ia_python/  
-├── main.py           # API con FastAPI  
-├── config.py         # Contiene el PROMPT_SISTEMA  
-├── .env              # Variables de entorno  
-├── requirements.txt  # Dependencias  
-├── Dockerfile        # Configuración para Docker  
-└── README.md  
-```
+📁 Estructura del proyecto
 
-## 👨‍💻 Autor
-Ing. Cristian Díaz
+git-chatbot-api/  
+├── main.py           # API principal con FastAPI  
+├── config.py         # Contiene el PROMPT_SISTEMA específico para Git  
+├── .env              # Variables de entorno (no subir a GitHub)  
+├── requirements.txt  # Paquetes necesarios  
+├── Dockerfile        # Configuración para despliegue con Docker  
+└── README.md         # Instrucciones y documentación  
 
----
-<p align="center">
-  <img width="300" src="https://i.imgur.com/YYf2LgH.png">
-</p>
+👨‍💻 Autor
+
+Dev. Duban Maruqez
+<p align="center"> <img width="300" src="https://i.imgur.com/YYf2LgH.png"> </p>
+
+¿Quieres que también te dé el contenido del config.py, main.py, requirements.txt, Dockerfile, etc., para este chatbot?
