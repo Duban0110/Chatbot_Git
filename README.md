@@ -87,6 +87,4 @@ git-chatbot-api/
 👨‍💻 Autor
 
 Dev. Duban Maruqez
-<p align="center"> <img width="300" src="https://i.imgur.com/YYf2LgH.png"> </p>
 
-¿Quieres que también te dé el contenido del config.py, main.py, requirements.txt, Dockerfile, etc., para este chatbot?
